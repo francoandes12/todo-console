@@ -4,13 +4,12 @@ const {
   crear,
   getListado,
   actualizar,
-  borrar
+  borrar,
 } = require('./por-hacer/por-hacer')
 let comando = argv._[0]
-const { description, completado } = argv
 switch (comando) {
   case 'crear':
-    let tarea = crear(description)
+    let tarea = crear(argv.descripcion)
     console.log(tarea)
     break
   case 'listar':
@@ -23,12 +22,12 @@ switch (comando) {
     }
     break
   case 'actualizar':
-    let actualizado = actualizar(description, completado)
+    let actualizado = actualizar(descripcion, completado)
     console.log(actualizado)
 
     break
   case 'borrar':
-    let borrado = borrar(description)
+    let borrado = borrar(descripcion)
     console.log(borrado)
     break
 
